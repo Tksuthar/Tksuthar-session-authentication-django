@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+  </head>
+  <body>
+    <h4>Sign in form</h4>
+    <a href="{% url 'sign_app:signup' %}">Sign up</a>
+    <form action="signin" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="" value="Sign In">
+    </form>
+  </body>
+</html>
