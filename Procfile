@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn authentication_project.wsgi
