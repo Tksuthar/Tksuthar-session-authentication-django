@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import SignUpForm, SignInForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
+from django.core.mail import send_mail
 
 def home(request):
     if 'user' in request.session:
@@ -19,8 +20,9 @@ def signin(request):
         request.session['user'] = username
         request.session['passwrod'] = password
         user = authenticate(username=username, password=password)
-        login(request, user)
-        return redirect('sign_app:home')
+        if user is not None:
+            login(request, user)
+            return redirect('sign_app:home')
     form = SignInForm()
     return render(request, 'signin.html', {'form':form})
 
