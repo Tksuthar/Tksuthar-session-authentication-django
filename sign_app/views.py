@@ -5,6 +5,11 @@ from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
 
+
+def color(request):
+    return render(request, "color-track.html")
+
+
 def home(request):
     if 'user' in request.session:
         return render(request, 'home.html')
