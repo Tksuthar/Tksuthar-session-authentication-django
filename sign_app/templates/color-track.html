@@ -47,13 +47,13 @@
 <div class="slidecontainer"> 
   <h1 id="display"></h1>	
   <p><strong>G</strong></p>
-  <input type="range" min="1" max="100" class="slider" id="rRange" step="1" oninput="sliderChange()">
+  <input type="range" min="0" max="255" class="slider" id="rRange" step="1" oninput="sliderChange()">
   
   <p><strong>G</strong></p>
-  <input type="range" min="1" max="100" class="slider" id="gRange" step="1" oninput="sliderChange()">
+  <input type="range" min="0" max="255" class="slider" id="gRange" step="1" oninput="sliderChange()">
   
   <p><strong>B</strong></p>
-  <input type="range" min="1" max="100" class="slider" id="bRange" step="1" oninput="sliderChange()">
+  <input type="range" min="0" max="255" class="slider" id="bRange" step="1" oninput="sliderChange()">
 </div>
 <p id="sliderVal"></p>
 </body>
@@ -67,7 +67,7 @@
     var b = document.getElementById("bRange").value;
     var x = String(r) + "," + String(g) + "," + String(b);
     document.getElementById('sliderVal').innerHTML = x;
-    var thergb = "'rgb(" + r + "," + g + "," + b + ")'"
+    var thergb = "'rgb(" + String(r) + "," + String(r) + "," + String(r) + ")'"
     document.body.style.background=thergb;	
 
         }
