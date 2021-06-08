@@ -44,7 +44,8 @@
 <h1>Image Processing Lab</h1>
 <h6>Basic Color Trackle Pannel</h6>  
 
-<div class="slidecontainer">  
+<div class="slidecontainer"> 
+  <h1 id="display"></h1>	
   <p><strong>G</strong></p>
   <input type="range" min="1" max="100" class="slider" id="rRange" step="1" oninput="sliderChange()">
   
@@ -66,5 +67,8 @@
     var b = document.getElementById("bRange").value;
     var x = String(r) + "," + String(g) + "," + String(b);
     document.getElementById('sliderVal').innerHTML = x;
+    document.getElementById('display').style.background-color = rgb(r, g, b);
+    document.getElementById('display').innerHTML = "RGB(" + x +")";	
+
         }
 </script>
