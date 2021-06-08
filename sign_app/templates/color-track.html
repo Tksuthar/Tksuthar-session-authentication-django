@@ -67,8 +67,8 @@
     var b = document.getElementById("bRange").value;
     var x = String(r) + "," + String(g) + "," + String(b);
     document.getElementById('sliderVal').innerHTML = x;
-    document.getElementById('display').style.background-color = rgb(r, g, b);
-    document.getElementById('display').innerHTML = "RGB(" + x +")";	
+    var thergb = "'rgb(" + r + "," + g + "," + b + ")'"
+    document.body.style.background=thergb;	
 
         }
 </script>
