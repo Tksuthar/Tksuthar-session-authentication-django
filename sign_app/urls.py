@@ -7,7 +7,7 @@ app_name = 'sign_app'
 
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path('color-trak', views.color, name = 'color-track'),
+    path('color-track', views.color, name = 'color-track'),
     path('signin', views.signin, name = 'signin'),
     path('logout', views.log_out, name = 'logout'),
     path('signup', views.signup, name = 'signup'),
