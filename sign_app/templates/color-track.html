@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Image Processing Lab</h1>
+<h6>Basic Color Trackle Pannel</h6>  
+
+<div class="slidecontainer">  
+  <p><strong>G</strong></p>
+  <input type="range" min="1" max="100" class="slider" id="rRange" step="1" oninput="sliderChange()">
+  
+  <p><strong>G</strong></p>
+  <input type="range" min="1" max="100" class="slider" id="gRange" step="1" oninput="sliderChange()">
+  
+  <p><strong>B</strong></p>
+  <input type="range" min="1" max="100" class="slider" id="bRange" step="1" oninput="sliderChange()">
+</div>
+<p id="sliderVal"></p>
+</body>
+</html>
+
+
+<script>
+	function sliderChange(){
+    var r = document.getElementById("rRange").value;
+    var g = document.getElementById("gRange").value;
+    var b = document.getElementById("bRange").value;
+    var x = String(r) + "," + String(g) + "," + String(b);
+    document.getElementById('sliderVal').innerHTML = x;
+        }
+</script>
